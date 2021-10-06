@@ -6,7 +6,7 @@ import 'package:iti_shop_app/core/router/router.dart';
 import 'package:iti_shop_app/view/cart/cart_view.dart';
 import 'package:iti_shop_app/view/favorites/favorites_view.dart';
 import 'package:iti_shop_app/view/home/component/home_grid_view.dart';
-import 'package:iti_shop_app/view/home/component/home_lst_view.dart';
+import 'package:iti_shop_app/view/home/component/home_list_view.dart';
 import 'package:iti_shop_app/view/home/controller/shop_cubit.dart';
 
 import 'controller/shop_cubit.dart';
@@ -64,7 +64,7 @@ class HomeView extends StatelessWidget {
                                   const EdgeInsets.symmetric(horizontal: 4),
                               child: Text(
                                 //TODO: add the cart counter here
-                                1.toString(),
+                                cubit.count.toString(),
                                 style: const TextStyle(fontSize: 12),
                               ),
                             ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_conditional_rendering/conditional.dart';
+import 'package:iti_shop_app/view/home/component/product_tile.dart';
 import 'package:iti_shop_app/view/home/controller/shop_cubit.dart';
 
 class FavoritesView extends StatelessWidget {
@@ -25,19 +26,7 @@ class FavoritesView extends StatelessWidget {
                 children: cubit.ids.map((id) {
                   var product =
                       cubit.products!.firstWhere((element) => element.id == id);
-                  return ListTile(
-                    title: Text(product.title.toString(),
-                        style: const TextStyle(fontWeight: FontWeight.bold)),
-                    leading: SizedBox(
-                        height: 80.0,
-                        width: 80.0,
-                        child: Image.network(
-                          product.image.toString(),
-                          fit: BoxFit.contain,
-                        )),
-                    subtitle: Text(product.description.toString(),
-                        style: const TextStyle(fontWeight: FontWeight.normal)),
-                  );
+                  return ProductTile(product: product, cubit: cubit);
                 }).toList(),
               ),
             ),

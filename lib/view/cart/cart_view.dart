@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:iti_shop_app/view/home/component/product_tile.dart';
 import 'package:iti_shop_app/view/home/controller/shop_cubit.dart';
 
 class CartView extends StatelessWidget {
@@ -18,9 +19,26 @@ class CartView extends StatelessWidget {
                 icon: const Icon(Icons.delete),
               )
             ]),
-            body: Center(
-              child: Text('CartView'),
-            ),
+            body: cubit.count > 0
+                ? ListView(
+                    children: cubit.entries.values
+                        .map((entry) => ProductTile(
+                            cubit: cubit,
+                            product: cubit.products!.firstWhere(
+                                (product) => product.id == entry.id)))
+                        .toList(),
+                  )
+                : Center(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Text('Cart is empty'),
+                        ElevatedButton(
+                            child: const Text('Add Products'),
+                            onPressed: () => Navigator.of(context).maybePop()),
+                      ],
+                    ),
+                  ),
           );
         },
       ),
