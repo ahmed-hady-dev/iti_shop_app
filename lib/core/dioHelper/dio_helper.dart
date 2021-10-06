@@ -2,8 +2,7 @@ import 'package:dio/dio.dart';
 
 class DioHelper {
   static Dio? dio;
-  //TODO: edit base url here
-  static const String baseUrl = 'https://student.valuxapps.com/api/';
+  static const String baseUrl = 'https://fakestoreapi.com/';
   static init() {
     dio = Dio(
       BaseOptions(
@@ -36,8 +35,7 @@ class DioHelper {
     required Map<String, dynamic> data,
     Map<String, dynamic>? query,
   }) async {
-    //TODO: add your headers here
-    dio!.options.headers = {};
+    dio!.options.headers = {'content-type': 'application/json'};
     return dio!.post(
       url,
       queryParameters: query,

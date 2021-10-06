@@ -27,9 +27,9 @@ dependencies:
   dio: ^4.0.0
   flutter_bloc: ^7.3.0
   cupertino_icons: ^1.0.3
-  easy_localization: ^3.0.0
-  connectivity_plus: ^2.0.1
+  connectivity_plus: ^2.0.2
   flutter_conditional_rendering: ^2.0.0
+  shared_preferences: ^2.0.8
   font_awesome_flutter: ^9.1.0
   fluttertoast: ^8.0.8
   nil: ^1.1.1
@@ -42,29 +42,29 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^1.0.4
-  flutter_app_name: ^0.1.1
-  flutter_native_splash: ^1.2.4
-  flutter_launcher_icons: ^0.9.2
-  #TODO: run these commands
-  #flutter pub run flutter_app_name
-  #flutter pub run flutter_native_splash:create
-  #flutter pub run flutter_launcher_icons:main
-flutter_app_name:
-  name: "ITI Shop App" #TODO: add your app name here
-
-
-flutter_native_splash:
-  color: "" #TODO: add your app splash light theme color like "#FEF6F4"
-  image:   #TODO: add your app image on splash light theme image like assets/images/app_icon_light.png in png format
-  color_dark: "" #TODO: add your app splash dark theme color like "#323031"
-  image_dark: #TODO: add your app image on splash dark theme image like assets/images/app_icon_dark.png in png format
-  android: true
-  ios: true
-
-flutter_icons:
-  android: true
-  ios: true
-  image_path: "" #TODO: add your app icon here in png format
+#  flutter_app_name: ^0.1.1
+#  flutter_native_splash: ^1.2.4
+#  flutter_launcher_icons: ^0.9.2
+#  #TODO: run these commands
+#  #flutter pub run flutter_app_name
+#  #flutter pub run flutter_native_splash:create
+#  #flutter pub run flutter_launcher_icons:main
+#flutter_app_name:
+#  name: "ITI Shop App" #TODO: add your app name here
+#
+#
+#flutter_native_splash:
+#  color: "" #TODO: add your app splash light theme color like "#FEF6F4"
+#  image:   #TODO: add your app image on splash light theme image like assets/images/app_icon_light.png in png format
+#  color_dark: "" #TODO: add your app splash dark theme color like "#323031"
+#  image_dark: #TODO: add your app image on splash dark theme image like assets/images/app_icon_dark.png in png format
+#  android: true
+#  ios: true
+#
+#flutter_icons:
+#  android: true
+#  ios: true
+#  image_path: "" #TODO: add your app icon here in png format
 
 flutter:
 
