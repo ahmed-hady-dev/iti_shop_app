@@ -4,6 +4,8 @@ ThemeData lightTheme(BuildContext context) {
   return ThemeData(
     scaffoldBackgroundColor: Colors.white,
     primaryColor: Colors.indigo,
+    tabBarTheme: const TabBarTheme(
+        labelColor: Colors.black, unselectedLabelColor: Colors.black54),
     colorScheme: const ColorScheme.light(
         primary: Colors.indigo, secondary: Colors.indigo),
     appBarTheme: AppBarTheme(

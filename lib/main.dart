@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iti_shop_app/constants/token.dart';
-import 'package:iti_shop_app/view/home/controller/shop_cubit.dart';
 import 'package:iti_shop_app/view/home/home_view.dart';
 import 'package:iti_shop_app/view/login/login_view.dart';
 
@@ -41,16 +40,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ShopCubit(),
-      child: MaterialApp(
-        title: 'ITI Shop App',
-        debugShowCheckedModeBanner: false,
-        navigatorKey: navigatorKey,
-        onGenerateRoute: onGenerateRoute,
-        theme: lightTheme(context),
-        home: startScreen,
-      ),
+    return MaterialApp(
+      title: 'ITI Shop App',
+      debugShowCheckedModeBanner: false,
+      navigatorKey: navigatorKey,
+      onGenerateRoute: onGenerateRoute,
+      theme: lightTheme(context),
+      home: startScreen,
     );
   }
 }
