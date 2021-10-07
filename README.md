@@ -1,4 +1,4 @@
-# iti_shop_app
+# ITI Shop App
 
 ##ITI training project
 
