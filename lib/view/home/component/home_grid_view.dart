@@ -68,34 +68,6 @@ class HomeGridView extends StatelessWidget {
               );
             },
           ),
-          // cubit.selectedCategory == 'all'
-          //     ? List.generate(cubit.productsList.length, (index) {
-          //         return ProductCard(
-          //           cubit: cubit,
-          //           index: index,
-          //           product: cubit.productsList[index],
-          //           image: cubit.productsList[index].image.toString(),
-          //           title: cubit.productsList[index].title.toString(),
-          //           description:
-          //               cubit.productsList[index].description.toString(),
-          //           id: cubit.productsList[index].id,
-          //         );
-          //       })
-          //     : List.generate(
-          //         cubit.categoriesList.length,
-          //         (index) {
-          //           return ProductCard(
-          //             cubit: cubit,
-          //             index: index,
-          //             product: cubit.categoriesList[index],
-          //             image: cubit.categoriesList[index].image.toString(),
-          //             title: cubit.categoriesList[index].title.toString(),
-          //             description:
-          //                 cubit.categoriesList[index].description.toString(),
-          //             id: cubit.categoriesList[index].id,
-          //           );
-          //         },
-          //       ),
         ),
       ],
     );
