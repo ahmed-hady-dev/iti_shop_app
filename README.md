@@ -1,6 +1,6 @@
 # iti_shop_app
 
-ITI training project
+##ITI training project
 
 1-✅ Load and store cart info using API
 2-✅ Update UI to show product prices, and complete cart interface to show total cost and place current order
