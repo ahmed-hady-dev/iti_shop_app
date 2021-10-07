@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-final GlobalKey<NavigatorState> navigatorKey =  GlobalKey<NavigatorState>();
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 Route<dynamic>? onGenerateRoute(RouteSettings settings) => null;
 

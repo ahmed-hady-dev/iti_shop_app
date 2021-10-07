@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:iti_shop_app/constants/app_colors.dart';
-import 'package:iti_shop_app/view/home/component/product_card.dart';
-import 'package:iti_shop_app/view/home/controller/shop_cubit.dart';
-import 'package:iti_shop_app/view/home/model/product_model.dart';
+import '../../../constants/app_colors.dart';
+import 'product_card.dart';
+import '../controller/shop_cubit.dart';
+import '../model/product_model.dart';
 
 class HomeGridView extends StatelessWidget {
   const HomeGridView({Key? key, required this.cubit}) : super(key: key);
@@ -30,7 +30,7 @@ class HomeGridView extends StatelessWidget {
                             style: const TextStyle(
                                 fontSize: 16.0,
                                 fontWeight: FontWeight.bold,
-                                color: AppColors.blue),
+                                color: AppColors.purple),
                           ),
                           onPressed: () {
                             cubit.selectedCategory = category.toString();
@@ -39,8 +39,8 @@ class HomeGridView extends StatelessWidget {
                           },
                           backgroundColor: Colors.grey[200],
                           shape: const StadiumBorder(
-                              side:
-                                  BorderSide(width: 1, color: AppColors.blue)),
+                              side: BorderSide(
+                                  width: 1, color: AppColors.purple)),
                         ),
                       ))
                   .toList()),
@@ -51,7 +51,7 @@ class HomeGridView extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 200,
-            childAspectRatio: 0.68,
+            childAspectRatio: 0.62,
             mainAxisSpacing: 20,
           ),
           children: List.generate(
@@ -65,6 +65,7 @@ class HomeGridView extends StatelessWidget {
                 title: selectedList[index].title.toString(),
                 description: selectedList[index].description.toString(),
                 id: selectedList[index].id,
+                price: selectedList[index].price,
               );
             },
           ),

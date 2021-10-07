@@ -35,7 +35,7 @@ class Counter extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           CircleAvatar(
-            backgroundColor: AppColors.blue,
+            backgroundColor: AppColors.purple,
             child: IconButton(
                 onPressed: value > 0 ? _decrement : null,
                 icon: const Icon(Icons.remove)),
@@ -48,7 +48,7 @@ class Counter extends StatelessWidget {
             ),
           ),
           CircleAvatar(
-              backgroundColor: AppColors.blue,
+              backgroundColor: AppColors.purple,
               child: IconButton(
                   onPressed: _increment, icon: const Icon(Icons.add))),
         ],

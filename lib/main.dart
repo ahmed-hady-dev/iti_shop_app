@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:iti_shop_app/constants/token.dart';
-import 'package:iti_shop_app/view/home/home_view.dart';
-import 'package:iti_shop_app/view/login/login_view.dart';
+import 'constants/token.dart';
+import 'view/home/home_view.dart';
+import 'view/login/login_view.dart';
 
 import 'core/blocObserver/bloc_observer.dart';
 import 'core/cacheHelper/cache_helper.dart';

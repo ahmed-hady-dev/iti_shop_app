@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_conditional_rendering/conditional.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:iti_shop_app/core/router/router.dart';
-import 'package:iti_shop_app/view/home/home_view.dart';
-import 'package:iti_shop_app/widgets/email_text_field.dart';
-import 'package:iti_shop_app/widgets/main_button.dart';
-import 'package:iti_shop_app/widgets/password_text_field.dart';
+import '../../constants/app_colors.dart';
+import '../../core/router/router.dart';
+import '../home/home_view.dart';
+import '../../widgets/email_text_field.dart';
+import '../../widgets/main_button.dart';
+import '../../widgets/password_text_field.dart';
 
 import 'controller/login_cubit.dart';
 
@@ -40,8 +41,14 @@ class LoginView extends StatelessWidget {
                   children: <Widget>[
                     const Padding(
                       padding: EdgeInsets.symmetric(vertical: 32.00),
-                      child: Text("Login now to your favorite Shopping App",
-                          style: TextStyle(fontSize: 24.0)),
+                      child: Text(
+                        "Login\nnow.",
+                        style: TextStyle(
+                            fontSize: 80.0,
+                            fontWeight: FontWeight.w900,
+                            color: AppColors.purple,
+                            height: 0.9),
+                      ),
                     ),
                     EmailTextField(
                         hintText: "Username",

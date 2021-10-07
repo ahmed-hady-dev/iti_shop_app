@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:iti_shop_app/widgets/counter.dart';
-import 'package:iti_shop_app/view/home/controller/shop_cubit.dart';
-import 'package:iti_shop_app/view/home/model/cart_entry.dart';
-import 'package:iti_shop_app/view/home/model/product_model.dart';
+import '../../../constants/app_colors.dart';
+import '../../../widgets/counter.dart';
+import '../controller/shop_cubit.dart';
+import '../model/cart_entry.dart';
+import '../model/product_model.dart';
 
 class ProductTile extends StatelessWidget {
   final ProductModel product;
@@ -24,10 +25,35 @@ class ProductTile extends StatelessWidget {
         product.description!,
         softWrap: true,
         overflow: TextOverflow.ellipsis,
-        maxLines: 3,
+        maxLines: 2,
       ),
-      leading: SizedBox(
-          width: 60.0, height: 80.0, child: Image.network(product.image!)),
+      isThreeLine: true,
+      leading: Column(
+        children: [
+          Flexible(
+            child: Container(
+              width: 60.0,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: NetworkImage(product.image!), fit: BoxFit.contain),
+              ),
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      color: AppColors.purple,
+                      borderRadius: BorderRadius.circular(4.0)),
+                  child: Text(product.price.toString(),
+                      textAlign: TextAlign.center,
+                      style:
+                          const TextStyle(fontSize: 14.0, color: Colors.white)),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
       trailing: Counter(
           value: cubit.entries[product.id]?.quantity ?? 0,
           onUpdate: (count) =>

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:iti_shop_app/core/router/router.dart';
-import 'package:iti_shop_app/view/home/controller/shop_cubit.dart';
-import 'package:iti_shop_app/view/home/model/cart_entry.dart';
-import 'package:iti_shop_app/view/home/model/product_model.dart';
-import 'package:iti_shop_app/view/product/product_view.dart';
-import 'package:iti_shop_app/widgets/counter.dart';
+import '../../../constants/app_colors.dart';
+import '../../../core/router/router.dart';
+import '../controller/shop_cubit.dart';
+import '../model/cart_entry.dart';
+import '../model/product_model.dart';
+import '../../product/product_view.dart';
+import '../../../widgets/counter.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard(
@@ -16,7 +17,8 @@ class ProductCard extends StatelessWidget {
       required this.image,
       required this.title,
       required this.description,
-      required this.id})
+      required this.id,
+      required this.price})
       : super(key: key);
   final ShopCubit cubit;
   final int index;
@@ -25,6 +27,7 @@ class ProductCard extends StatelessWidget {
   final String? title;
   final String? description;
   final int? id;
+  final double? price;
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +55,8 @@ class ProductCard extends StatelessWidget {
                             onPressed: () =>
                                 cubit.changeFavorites(productId: id),
                             icon: cubit.ids.contains(id)
-                                ? const Icon(Icons.favorite, color: Colors.red)
+                                ? const Icon(Icons.favorite,
+                                    color: AppColors.red)
                                 : const Icon(Icons.favorite_border)),
                       ),
                     ),
@@ -74,7 +78,15 @@ class ProductCard extends StatelessWidget {
                           maxLines: 2,
                           style: Theme.of(context).textTheme.caption),
                     ])),
-            Flexible(child: Container()),
+            Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    color: AppColors.purple,
+                    borderRadius: BorderRadius.circular(6.0)),
+                padding: const EdgeInsets.symmetric(vertical: 4),
+                child: Text('Price: $price',
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(color: Colors.white))),
             Counter(
                 mainAxisSize: MainAxisSize.max,
                 value: cubit.entries[id]?.quantity ?? 0,

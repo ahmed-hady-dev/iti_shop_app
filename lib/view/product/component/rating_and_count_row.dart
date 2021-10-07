@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iti_shop_app/constants/app_colors.dart';
+import '../../../constants/app_colors.dart';
 
 class RatingAndCountRow extends StatelessWidget {
   const RatingAndCountRow({Key? key, required this.rate, required this.count})
@@ -19,7 +19,7 @@ class RatingAndCountRow extends StatelessWidget {
               children: [
                 const TextSpan(
                     text: 'Rating : ',
-                    style: TextStyle(fontSize: 16.0, color: AppColors.blue)),
+                    style: TextStyle(fontSize: 16.0, color: AppColors.purple)),
                 TextSpan(
                   text: rate,
                   style: const TextStyle(
@@ -35,7 +35,7 @@ class RatingAndCountRow extends StatelessWidget {
               children: [
                 const TextSpan(
                     text: 'Count : ',
-                    style: TextStyle(fontSize: 16.0, color: AppColors.blue)),
+                    style: TextStyle(fontSize: 16.0, color: AppColors.purple)),
                 TextSpan(
                   text: count,
                   style: const TextStyle(

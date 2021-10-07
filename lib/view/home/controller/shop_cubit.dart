@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:iti_shop_app/constants/end_points.dart';
-import 'package:iti_shop_app/core/dioHelper/dio_helper.dart';
-import 'package:iti_shop_app/view/home/model/cart_entry.dart';
-import 'package:iti_shop_app/view/home/model/product_model.dart';
+import '../../../constants/end_points.dart';
+import '../../../core/dioHelper/dio_helper.dart';
+import '../model/cart_entry.dart';
+import '../model/product_model.dart';
 import 'package:meta/meta.dart';
 
 part 'shop_state.dart';

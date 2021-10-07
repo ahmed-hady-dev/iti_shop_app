@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:iti_shop_app/view/home/controller/shop_cubit.dart';
-import 'package:iti_shop_app/view/home/model/cart_entry.dart';
-import 'package:iti_shop_app/view/home/model/product_model.dart';
-import 'package:iti_shop_app/widgets/counter.dart';
+import '../home/controller/shop_cubit.dart';
+import '../home/model/cart_entry.dart';
+import '../home/model/product_model.dart';
+import '../../widgets/counter.dart';
 
 import 'component/description_column.dart';
 import 'component/price_and_category_row.dart';

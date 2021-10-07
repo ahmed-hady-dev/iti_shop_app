@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:iti_shop_app/constants/end_points.dart';
-import 'package:iti_shop_app/constants/token.dart';
-import 'package:iti_shop_app/core/cacheHelper/cache_helper.dart';
-import 'package:iti_shop_app/core/dioHelper/dio_helper.dart';
-import 'package:iti_shop_app/view/login/model/login_model.dart';
+import '../../../constants/end_points.dart';
+import '../../../constants/token.dart';
+import '../../../core/cacheHelper/cache_helper.dart';
+import '../../../core/dioHelper/dio_helper.dart';
+import '../model/login_model.dart';
 
 part 'login_state.dart';
 

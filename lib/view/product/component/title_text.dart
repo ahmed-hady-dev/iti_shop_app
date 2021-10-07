@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iti_shop_app/constants/app_colors.dart';
+import '../../../constants/app_colors.dart';
 
 class TitleText extends StatelessWidget {
   const TitleText({Key? key, required this.text}) : super(key: key);
@@ -14,7 +14,7 @@ class TitleText extends StatelessWidget {
           style: const TextStyle(
               fontSize: 22.0,
               fontWeight: FontWeight.bold,
-              color: AppColors.blue)),
+              color: AppColors.purple)),
     );
   }
 }

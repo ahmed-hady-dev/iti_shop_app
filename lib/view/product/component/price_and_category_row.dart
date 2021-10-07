@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iti_shop_app/constants/app_colors.dart';
+import '../../../constants/app_colors.dart';
 
 class PriceAndCategoryRow extends StatelessWidget {
   const PriceAndCategoryRow(
@@ -20,7 +20,7 @@ class PriceAndCategoryRow extends StatelessWidget {
               children: [
                 const TextSpan(
                     text: 'Price ',
-                    style: TextStyle(fontSize: 22.0, color: Colors.blueGrey)),
+                    style: TextStyle(fontSize: 22.0, color: AppColors.purple)),
                 TextSpan(
                   text: "$price EGP",
                   style: const TextStyle(
@@ -40,7 +40,7 @@ class PriceAndCategoryRow extends StatelessWidget {
                   style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 14.0,
-                      color: AppColors.blue),
+                      color: AppColors.purple),
                 ),
               ],
             ),

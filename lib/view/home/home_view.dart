@@ -2,13 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_conditional_rendering/conditional.dart';
-import 'package:iti_shop_app/core/router/router.dart';
-import 'package:iti_shop_app/view/cart/cart_view.dart';
-import 'package:iti_shop_app/view/favorites/favorites_view.dart';
-import 'package:iti_shop_app/view/home/component/home_grid_view.dart';
-import 'package:iti_shop_app/view/home/controller/shop_cubit.dart';
-
+import '../../constants/app_colors.dart';
+import '../../core/router/router.dart';
+import '../cart/cart_view.dart';
+import '../favorites/favorites_view.dart';
+import 'component/home_grid_view.dart';
 import 'controller/shop_cubit.dart';
+import '../settings_view.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -28,12 +28,29 @@ class HomeView extends StatelessWidget {
               appBar: AppBar(
                 title: Row(
                   mainAxisSize: MainAxisSize.min,
-                  children: const [
-                    Padding(padding: EdgeInsets.all(4.0), child: FlutterLogo()),
-                    Text('Shop'),
+                  children: [
+                    Image.asset(
+                      "assets/images/purple_void_logo_icon.png",
+                      fit: BoxFit.cover,
+                      height: 40,
+                    ),
+                    const Text('ITI Shop App',
+                        style: TextStyle(
+                            color: AppColors.purple,
+                            fontSize: 24.0,
+                            fontWeight: FontWeight.bold,
+                            height: 2))
                   ],
                 ),
                 actions: [
+                  IconButton(
+                      onPressed: () => MagicRouter.navigateTo(
+                            BlocProvider.value(
+                              value: cubit,
+                              child: const SettingsView(),
+                            ),
+                          ),
+                      icon: const Icon(Icons.settings_rounded)),
                   IconButton(
                     icon: const Icon(Icons.favorite_rounded),
                     onPressed: () => MagicRouter.navigateTo(
@@ -50,7 +67,7 @@ class HomeView extends StatelessWidget {
                     )),
                     icon: Stack(
                       children: [
-                        const Icon(Icons.shopping_cart),
+                        const Icon(Icons.shopping_cart_rounded),
                         Positioned(
                           right: 0,
                           child: Container(
@@ -66,7 +83,7 @@ class HomeView extends StatelessWidget {
                         ),
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
               body: Conditional.single(
