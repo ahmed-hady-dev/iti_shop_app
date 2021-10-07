@@ -49,9 +49,12 @@ class HomeGridView extends StatelessWidget {
         GridView(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 200,
-            childAspectRatio: 0.62,
+            childAspectRatio:
+                MediaQuery.of(context).orientation == Orientation.portrait
+                    ? 0.62
+                    : 0.61,
             mainAxisSpacing: 20,
           ),
           children: List.generate(

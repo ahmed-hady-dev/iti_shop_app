@@ -25,7 +25,6 @@ ThemeData lightTheme(BuildContext context) {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         primary: AppColors.purple,
-        padding: const EdgeInsets.all(0),
         elevation: 4.0,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(8.0)),
