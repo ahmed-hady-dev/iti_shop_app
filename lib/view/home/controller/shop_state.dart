@@ -16,4 +16,7 @@ class ChangeFavoritesState extends ShopState {}
 
 //===============================================================
 class ChangeEntryState extends ShopState {}
+
+//===============================================================
+class ChangeCategoryState extends ShopState {}
 //===============================================================

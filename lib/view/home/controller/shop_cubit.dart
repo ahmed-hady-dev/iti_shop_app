@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:iti_shop_app/constants/end_points.dart';
@@ -10,24 +11,50 @@ part 'shop_state.dart';
 
 class ShopCubit extends Cubit<ShopState> {
   ShopCubit() : super(ShopInitial());
+
   static ShopCubit get(context) => BlocProvider.of(context);
+
 //===============================================================
-  List<ProductModel>? products;
+  List<ProductModel> productsList = [];
+  List<ProductModel> categoriesList = [];
+  String selectedCategory = 'all';
   List<int> ids = [];
+  List<dynamic> categories = ['all'];
   var entries = <int, CartEntry>{};
-  //===============================================================
+
+//===============================================================
 
   Future<void> getData() async {
     emit(GetProductDataLoading());
-    final response = await DioHelper.getData(url: PRODUCTS);
+    final homeResponse = await DioHelper.getData(url: PRODUCTS);
     try {
-      products = (response.data as List<dynamic>)
+      productsList = (homeResponse.data as List<dynamic>)
           .map((value) => ProductModel.fromJson(value))
           .toList();
       emit(GetProductDataSuccess());
     } catch (error) {
       Fluttertoast.showToast(msg: error.toString());
     }
+  }
+
+//===============================================================
+
+  Future<void> getCategories() async {
+    emit(GetProductDataLoading());
+    final categoriesResponse = await DioHelper.getData(url: CATEGORIES);
+    try {
+      categories.addAll(categoriesResponse.data);
+      emit(GetProductDataSuccess());
+    } catch (error) {
+      Fluttertoast.showToast(msg: error.toString());
+    }
+  }
+//===============================================================
+
+  changeCategory({required String category}) {
+    categoriesList =
+        productsList.where((element) => element.category == category).toList();
+    emit(ChangeCategoryState());
   }
 
 //===============================================================

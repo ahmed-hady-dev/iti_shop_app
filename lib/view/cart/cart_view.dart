@@ -15,16 +15,15 @@ class CartView extends StatelessWidget {
           return Scaffold(
             appBar: AppBar(title: const Text('Cart'), actions: [
               IconButton(
-                onPressed: cubit.count > 0 ? cubit.clear : null,
-                icon: const Icon(Icons.delete),
-              )
+                  onPressed: cubit.count > 0 ? cubit.clear : null,
+                  icon: const Icon(Icons.delete))
             ]),
             body: cubit.count > 0
                 ? ListView(
                     children: cubit.entries.values
                         .map((entry) => ProductTile(
                             cubit: cubit,
-                            product: cubit.products!.firstWhere(
+                            product: cubit.productsList.firstWhere(
                                 (product) => product.id == entry.id)))
                         .toList(),
                   )

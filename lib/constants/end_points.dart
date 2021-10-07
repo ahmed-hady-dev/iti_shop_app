@@ -2,3 +2,4 @@
 
 const String LOGIN = 'auth/login';
 const String PRODUCTS = 'products';
+const String CATEGORIES = 'products/categories';

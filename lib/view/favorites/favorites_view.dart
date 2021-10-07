@@ -23,9 +23,10 @@ class FavoritesView extends StatelessWidget {
                       style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 18.0))),
               fallbackBuilder: (context) => ListView(
+                shrinkWrap: true,
                 children: cubit.ids.map((id) {
-                  var product =
-                      cubit.products!.firstWhere((element) => element.id == id);
+                  var product = cubit.productsList
+                      .firstWhere((element) => element.id == id);
                   return ProductTile(product: product, cubit: cubit);
                 }).toList(),
               ),
