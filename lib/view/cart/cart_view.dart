@@ -15,18 +15,22 @@ class CartView extends StatelessWidget {
       child: BlocBuilder<ShopCubit, ShopState>(
         builder: (context, state) {
           final cubit = ShopCubit.get(context);
-          final total = cubit.entries.values
+          List total = [];
+          total = cubit.entries.values
               .map((entry) =>
                   cubit.productsList
                       .where((element) => element.id == entry.id!)
                       .first
                       .price!
                       .toDouble() *
-                  entry.quantity)
+                  entry.quantity.toDouble())
               .toList();
-          final totalPrice = total
-              .fold(0, (previousValue, element) => previousValue = element)
-              .toStringAsFixed(2);
+          final totalPrice = total.fold(0.0, (previousValue, element) {
+            double a, b;
+            a = previousValue as double;
+            b = element as double;
+            return a + b;
+          }).toStringAsFixed(2);
           return Scaffold(
             appBar: AppBar(
                 title: const Text(
@@ -41,19 +45,15 @@ class CartView extends StatelessWidget {
                       icon: const Icon(Icons.delete))
                 ]),
             body: cubit.count > 0
-                ? Column(
-                    children: [
-                      ListView(shrinkWrap: true, children: [
-                        PriceContainer(totalPrice: totalPrice),
-                        ...cubit.entries.values
-                            .map((entry) => ProductTile(
-                                cubit: cubit,
-                                product: cubit.productsList.firstWhere(
-                                    (product) => product.id == entry.id)))
-                            .toList()
-                      ]),
-                    ],
-                  )
+                ? ListView(shrinkWrap: true, children: [
+                    PriceContainer(totalPrice: totalPrice),
+                    ...cubit.entries.values
+                        .map((entry) => ProductTile(
+                            cubit: cubit,
+                            product: cubit.productsList.firstWhere(
+                                (product) => product.id == entry.id)))
+                        .toList()
+                  ])
                 : const CartEmptyColumn(),
           );
         },
